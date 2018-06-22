@@ -4,6 +4,7 @@ using Loda.Entity.DataTable;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace Loda.BLL.Implements
 {
@@ -27,9 +28,10 @@ namespace Loda.BLL.Implements
         {
             DT_User user = new DT_User
             {
-                user_name = "test-" + new Random().Next(10000),
-                user_password = DateTime.Now.ToString()
+                UserName = "test-" + new Random().Next(10000),
+                UserPassword = DateTime.Now.ToString()
             };
+
             return AddEntity(user, true);
         }
     }
